@@ -4,7 +4,9 @@
 
 2. On the test pdf the VIN 'INKDLUOX33R385016' appears twice. If I may, I would suggest adding this vin '1M8GDM9XKP042788'  in place of one of the repetitions, it is a valid VIN with an 'X' as the checksum digit.
 
-3. This was a pretty fun test to do.
+3. Altough the provided NHTSA decoder fails at the VIN 'JBDCUB16857005393' which is a correction of the vin 'JBDCUB16657005393' provided on the test, because the manufacturer isn't able to import sale in the US, it is indeed a valid VIN.  
+
+4. This was a pretty fun test to do.
 
 
 ## Bonus activities:
