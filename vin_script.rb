@@ -14,6 +14,8 @@ def execute(upcased_vin, vin)
   
   if invalid_characters?(upcased_vin) || invalid_checksum?(upcased_vin)
     vin_suggestion = build_vin_suggestion(upcased_vin, status, check_digit)
+  else
+    vin_suggestion = upcased_vin
   end
   
   #re-execute calculation after the initial vin correction(I,Q,O)
