@@ -26,8 +26,7 @@ Programmatically, assuming that I would have a database with the necessary data 
 I could probably suggest any information about the attributes listed above.
 
 
-### If we wanted to replicate or enhance behavior in our GET /vins/:vin endpoint in Global Assets how might this script help us? Do you see any opportunities in the API contract to allow this when a consumer receives an HTTP 400 - Bad Request response.
-
+### If we wanted to replicate or enhance behavior in our GET /vins/:vin endpoint in Global Assets how might this script help us? Do you see any opportunities in the API contract to allow this when a consumer receives an HTTP 400 - Bad Request response?
 
 
 Generally speaking it is a good practice not to give too much information about a HTTP 400 error on a public API,
