@@ -24,13 +24,15 @@ def execute(upcased_vin, vin)
   
   #this 'if' and the recalculation of the check_digit is here for VIN's like INKDLUOX33R385016
   #where the checksum caculation will be right after you substitute the I,O and Q chars.
-  #these two checks gave me the oportunity to suggest only one reliable vin instead of multiple sugestions
+  #These two checks gave me the oportunity to suggest only one reliable vin instead of multiple sugestions
+  #This also makes improbable(given this script spectrum of checking) and the correction that I did earlier
+  #a situation where I have a valid check_digit and a suggestion at the same time.
   if status == 'INVALID'
     recalculed_check_digit = calculate_check_digit(vin_suggestion)
     vin_suggestion         = checksum_suggestion(vin_suggestion, recalculed_check_digit)
   end
 
-  response(status: status, vin: vin, suggestion: vin_suggestion)
+  response(status: status, inputed_vin: vin, suggestion: vin_suggestion)
 end
 
 # for this two regexp I could have opted to move them to a constant and give them meaningfull names
@@ -73,12 +75,12 @@ def checksum_suggestion(vin, check_digit)
 end
 
 #There's not much going on here :)
-def response(status:, vin:, suggestion:)
-  puts "Provided VIN: #{vin}"
+def response(status:, inputed_vin:, suggestion:)
+  puts "Provided VIN: #{inputed_vin}"
   puts "Check digit:  #{status}"
 
   if status == 'INVALID'
-    puts "Suggested VIN(s):#{suggestion}"
+    puts "Suggested VIN:#{suggestion}"
   else
     puts "It looks like a valid VIN!!"
   end
