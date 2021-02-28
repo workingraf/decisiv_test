@@ -20,6 +20,8 @@ def execute(upcased_vin, vin)
   # Letting this check run first will ascertain that there is no invalid char on VIN
   if invalid_characters?(upcased_vin) || invalid_checksum?(upcased_vin)
     vin_suggestion = build_vin_suggestion(upcased_vin, status, check_digit)
+  else
+    vin_suggestion = upcased_vin
   end
   
   #this 'if' and the recalculation of the check_digit is here for VIN's like INKDLUOX33R385016
