@@ -22,7 +22,7 @@ def execute(upcased_vin, vin)
     vin_suggestion         = checksum_suggestion(vin_suggestion, recalculed_check_digit)
   end
 
-  response(status: status, vin: vin, suggestion: vin_suggestion)
+  response(status: status, inputed_vin: vin, suggestion: vin_suggestion)
 end
 
 # I, O and Q are invalid vin chars
@@ -55,12 +55,12 @@ def checksum_suggestion(vin, check_digit)
   vin
 end
 
-def response(status:, vin:, suggestion:)
-  puts "Provided VIN: #{vin}"
+def response(status:, inputed_vin:, suggestion:)
+  puts "Provided VIN: #{inputed_vin}"
   puts "Check digit:  #{status}"
 
   if status == 'INVALID'
-    puts "Suggested VIN(s):#{suggestion}"
+    puts "Suggested VIN:#{suggestion}"
   else
     puts "It looks like a valid VIN!!"
   end
